@@ -10,12 +10,32 @@
 #include "QMessageBox"
 #include "QFileDialog"
 
+
 class load_xml : public QObject
 {
     Q_OBJECT
 public:
     explicit load_xml(QObject *parent = 0);
+     ~load_xml();
       QXmlStreamReader *xml;
+     // QVector<QString> *dann(n);
+      struct factura
+        {
+         QString nameF;
+         QString nomerF;
+         QString dataF;
+         QString INN;
+         QString ORG;
+         QString KPP;
+         QString adres;
+         QString array[100][100] ;
+         QString tov[100] ;
+         QString price[100] ;
+
+           };
+      factura *fact1;
+      QSqlDatabase dbase = QSqlDatabase::addDatabase("QSQLITE");
+
 signals:
 
 public slots:
